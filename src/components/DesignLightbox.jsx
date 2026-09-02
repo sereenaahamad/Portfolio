@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 
 export default function DesignLightbox({ project, accent = 'indigo', onClose }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const images = project?.galleryImages ?? []
 
   useEffect(() => {
     const onKeyDown = (event) => {
@@ -46,7 +47,6 @@ export default function DesignLightbox({ project, accent = 'indigo', onClose }) 
 
   const accentBorder = accent === 'indigo' ? 'border-indigo-glow/30' : 'border-violet-glow/30'
   const accentText = accent === 'indigo' ? 'text-indigo-glow' : 'text-violet-glow'
-  const images = project.galleryImages ?? []
   const currentImage = images[activeIndex] ?? images[0]
 
   const goPrev = () => {
@@ -72,13 +72,13 @@ export default function DesignLightbox({ project, accent = 'indigo', onClose }) 
         onClick={onClose}
       />
 
-      <div className={`relative z-10 w-full max-w-6xl overflow-hidden rounded-3xl border ${accentBorder} bg-base-card shadow-[0_30px_100px_rgba(0,0,0,0.55)]`}>
-        <div className="flex items-start justify-between gap-6 border-b border-base-border px-5 py-5 sm:px-6">
-          <div>
+      <div className={`relative z-10 flex max-h-[calc(100dvh-2rem)] w-full max-w-6xl flex-col overflow-hidden rounded-3xl border ${accentBorder} bg-base-card shadow-[0_30px_100px_rgba(0,0,0,0.55)]`}>
+        <div className="flex flex-shrink-0 items-start justify-between gap-4 border-b border-base-border px-4 py-4 sm:gap-6 sm:px-6 sm:py-5">
+          <div className="min-w-0">
             <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${accentText}`}>
               Design Project
             </p>
-            <h3 className="mt-2 font-display text-2xl font-bold text-ink">{project.title}</h3>
+            <h3 className="mt-2 break-words font-display text-xl font-bold text-ink sm:text-2xl">{project.title}</h3>
             <p className="mt-2 max-w-3xl text-sm leading-relaxed text-ink-muted">
               {project.description}
             </p>
@@ -87,26 +87,26 @@ export default function DesignLightbox({ project, accent = 'indigo', onClose }) 
           <button
             type="button"
             aria-label="Close gallery"
-            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-base-border text-ink-muted transition-colors hover:border-white/30 hover:text-white"
+            className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-base-border text-ink-muted transition-colors hover:border-white/30 hover:text-white sm:h-10 sm:w-10"
             onClick={onClose}
           >
             <X size={18} />
           </button>
         </div>
 
-        <div className="max-h-[78vh] overflow-y-auto px-5 py-5 sm:px-6">
+        <div className="min-h-0 overflow-y-auto px-4 py-4 sm:px-6 sm:py-5">
           <div className="relative overflow-hidden rounded-3xl border border-base-border bg-black/20">
             <img
               src={currentImage}
               alt={`${project.title} preview ${activeIndex + 1}`}
-              className="h-[22rem] w-full object-cover sm:h-[30rem]"
+              className="h-[min(46vh,26rem)] w-full object-contain sm:h-[min(58vh,34rem)]"
             />
 
             <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-black/70 to-transparent px-4 py-4 sm:px-5">
               <button
                 type="button"
                 aria-label="Previous image"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-sm transition-colors hover:border-white/35 hover:bg-black/45"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-sm transition-colors hover:border-white/35 hover:bg-black/45 sm:h-11 sm:w-11"
                 onClick={goPrev}
               >
                 <ChevronLeft size={18} />
@@ -119,7 +119,7 @@ export default function DesignLightbox({ project, accent = 'indigo', onClose }) 
               <button
                 type="button"
                 aria-label="Next image"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-sm transition-colors hover:border-white/35 hover:bg-black/45"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white backdrop-blur-sm transition-colors hover:border-white/35 hover:bg-black/45 sm:h-11 sm:w-11"
                 onClick={goNext}
               >
                 <ChevronRight size={18} />

@@ -35,6 +35,15 @@ export const stats = [
 
 // Section 1 - engineering-led work: apps and interfaces built and coded.
 export const frontendProjects = [
+  {
+    title: 'Hydromaster Pools',
+    description:
+      'A modern, responsive website designed and developed for HydroMaster Pools, showcasing services, projects etc..',
+    tags: ['UI/UX Design', 'Website Development', 'Corporate Website'],
+    featured: true,
+    thumbnail: '/thumbnail/hydromaster.jpg',
+    url: 'https://hydromasterpools.in/'
+  },
   
   {
     title: 'Fire Safety Dashboard',
@@ -45,6 +54,15 @@ export const frontendProjects = [
     featured: true,
     thumbnail: '/thumbnail/dashboard.jpg',
     url: 'https://fire-safety-dashboard-gules.vercel.app/'
+  },
+  {
+    title: 'Alego Fire Systems',
+    description:
+      'Modern corporate front end for a fire safety brand with clear service presentation and strong visual hierarchy.',
+    tags: ['Bootstrap', 'Responsive', 'Corporate Website'],
+    thumbnail: '/thumbnail/alego.jpg',
+    url: 'https://alego.in/'
+    
   },
   {
     title: 'Ecommerce App',
@@ -60,15 +78,7 @@ export const frontendProjects = [
     thumbnail: '/thumbnail/auraspace.jpg',
     url: 'https://auraspace-gray.vercel.app/'
   },
-  {
-    title: 'Alego Fire Systems',
-    description:
-      'Modern corporate front end for a fire safety brand with clear service presentation and strong visual hierarchy.',
-    tags: ['Bootstrap', 'Responsive', 'Corporate Website'],
-    thumbnail: '/thumbnail/alego.jpg',
-    url: 'https://alego.in/'
-    
-  },
+  
   {
     title: 'Elomech MEP',
     description:
@@ -129,6 +139,22 @@ export const creativeDesignSections = [
     subtitle: 'Logo design, brand marks and visiting card layouts.',
     accent: 'indigo',
     projects: [
+       {
+        title: 'Brochure',
+        description: 'Brochure layouts that present services and information in a clean format.',
+        tags: ['Brochure', 'Layout', 'Print'],
+        icon: 'BookOpen',
+        thumbnail: '/designs/brochure/brochure2.jpg',
+        galleryImages: expandGallery(brochureGallery),
+      },
+      {
+        title: 'Posters',
+        description: 'Eye-catching posters created for campaigns, announcements and events.',
+        tags: ['Poster', 'Creative', 'Marketing'],
+        icon: 'Megaphone',
+        thumbnail: '/designs/posters/poster2.jpg',
+        galleryImages: expandGallery(posterGallery),
+      },
       {
         title: 'Logo Concepts',
         description: 'Clean, memorable logo ideas built around brand direction and identity.',
@@ -144,22 +170,6 @@ export const creativeDesignSections = [
         icon: 'CreditCard',
         thumbnail: '/designs/visiting-cards/vc2.jpg',
         galleryImages: expandGallery(visitingcardGallery),
-      },
-       {
-        title: 'Brochure',
-        description: 'Brochure layouts that present services and information in a clean format.',
-        tags: ['Brochure', 'Layout', 'Print'],
-        icon: 'BookOpen',
-        thumbnail: '/designs/brochure/brochure2.jpg',
-        galleryImages: expandGallery(brochureGallery),
-      },
-      {
-        title: 'Posters',
-        description: 'Eye-catching posters created for campaigns, announcements and events.',
-        tags: ['Poster', 'Creative', 'Marketing'],
-        icon: 'Megaphone',
-        thumbnail: '/designs/posters/poster1.jpg',
-        galleryImages: expandGallery(posterGallery),
       },
       {
         title: 'PPT Presentation',
